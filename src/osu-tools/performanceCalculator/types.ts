@@ -1,0 +1,26 @@
+export type Mod =
+   | 'AP'
+   | 'BR'
+   | 'CN'
+   | 'CL'
+   | 'DC'
+   | 'DA'
+   | 'DT'
+   | 'EZ'
+   | 'FL'
+   | 'HT'
+   | 'HR'
+   | 'HD'
+   | 'MR'
+   | 'MU'
+   | 'NC'
+   | 'NF'
+   | 'NM'
+   | 'PF'
+   | 'RD'
+   | 'RX'
+   | 'SD'
+   | 'WD'
+   | 'WU';
+
+export type Mods = Mod[];
