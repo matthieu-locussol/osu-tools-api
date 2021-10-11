@@ -10,7 +10,7 @@ app.get('/', (_req, res) => {
 app.get('/simulate', async (_req, res) => {
    const result = await Promise.all([
       executeSimulate({
-         beatmapPath: '/home/jeckhys/Unix/osu-tools-api/cache/map.osu',
+         beatmapPath: 'cache/map.osu',
          mods: ['HD', 'HR'],
          goods: 5,
       }),
