@@ -4,7 +4,9 @@ import { executeSimulate } from './osu-tools/performanceCalculator/simulate';
 const app = express();
 
 app.get('/', (_req, res) => {
-   res.send('Hello World');
+   res.json({
+      status: 'Server healthy',
+   });
 });
 
 app.get('/simulate', async (_req, res) => {
@@ -16,7 +18,7 @@ app.get('/simulate', async (_req, res) => {
       }),
    ]);
 
-   res.send(result);
+   res.json(JSON.parse(`[${result.join('')}]`));
 });
 
 app.listen(3000);
