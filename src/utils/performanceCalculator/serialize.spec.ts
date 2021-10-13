@@ -1,11 +1,8 @@
-import { serializeBeatmapPath, serializeMods } from './serialize';
+import { serializeBeatmapId, serializeMods } from './serialize';
 
 describe(__filename, () => {
    test('serializeBeatmapPath', () => {
-      expect(serializeBeatmapPath('')).toEqual('osu ');
-      expect(serializeBeatmapPath('cache/example.osu')).toEqual(
-         'osu cache/example.osu',
-      );
+      expect(serializeBeatmapId(129891)).toEqual('osu 129891');
    });
 
    test('serializeMods', () => {

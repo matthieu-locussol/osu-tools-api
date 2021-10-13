@@ -12,13 +12,13 @@ app.get('/', (_req, res) => {
 app.get('/simulate', async (_req, res) => {
    const result = await Promise.all([
       executeSimulate({
-         beatmapPath: 'cache/map.osu',
+         beatmapId: 129891,
          mods: ['HD', 'HR'],
          goods: 5,
       }),
    ]);
 
-   res.json(JSON.parse(`[${result.join('')}]`));
+   res.json(result);
 });
 
 app.listen(3000);

@@ -1,7 +1,7 @@
 import { Mods } from '../../osu-tools/performanceCalculator/types';
 
-export const serializeBeatmapPath = (beatmapPath: string): string => {
-   return `osu ${beatmapPath}`;
+export const serializeBeatmapId = (beatmapId: number): string => {
+   return `osu ${beatmapId}`;
 };
 
 export const serializeAccuracy = (accuracy: number): string => {

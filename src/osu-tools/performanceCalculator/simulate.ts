@@ -2,7 +2,7 @@ import { execute } from '../../utils/execute';
 import { Mods } from './types';
 import {
    serializeAccuracy,
-   serializeBeatmapPath,
+   serializeBeatmapId,
    serializeCombo,
    serializeGoods,
    serializeMehs,
@@ -17,13 +17,34 @@ import {
 } from './constants';
 
 export type SimulatePayload = {
-   beatmapPath: string;
+   beatmapId: number;
    accuracy?: number;
    combo?: number;
    mods?: Mods;
    goods?: number;
    mehs?: number;
    misses?: number;
+};
+
+export type SimulateResult = {
+   Beatmap: string;
+   Statistics: {
+      Accuracy: number;
+      Combo: number;
+      Great: number;
+      Ok: number;
+      Meh: number;
+      Miss: number;
+   };
+   Aim: number;
+   Speed: number;
+   Accuracy: number;
+   Flashlight: number;
+   OD: number;
+   AR: number;
+   'Max Combo': number;
+   Mods: string;
+   pp: number;
 };
 
 export const simulatePayloadToArgs = (payload: SimulatePayload): string => {
@@ -34,9 +55,9 @@ export const simulatePayloadToArgs = (payload: SimulatePayload): string => {
 
       if (payload[key] !== undefined) {
          switch (key) {
-            case 'beatmapPath': {
-               const beatmapPath = payload[key];
-               args.push(serializeBeatmapPath(beatmapPath));
+            case 'beatmapId': {
+               const beatmapId = payload[key];
+               args.push(serializeBeatmapId(beatmapId));
                break;
             }
             case 'accuracy': {
@@ -93,9 +114,14 @@ export const buildSimulateCommand = (args: string): string => {
    );
 };
 
-export const executeSimulate = (payload: SimulatePayload): Promise<unknown> => {
+export const executeSimulate = async (
+   payload: SimulatePayload,
+): Promise<SimulateResult> => {
    const args = simulatePayloadToArgs(payload);
    const command = buildSimulateCommand(args);
 
-   return execute(command);
+   const stdout = await execute(command);
+   const result = JSON.parse(stdout) as SimulateResult;
+
+   return result;
 };
