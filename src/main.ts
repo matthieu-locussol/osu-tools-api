@@ -1,7 +1,10 @@
 import express from 'express';
-import { executeSimulate } from './osu-tools/performanceCalculator/simulate';
+import { simulateRoute } from './controllers/simulate';
 
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (_req, res) => {
    res.json({
@@ -9,16 +12,6 @@ app.get('/', (_req, res) => {
    });
 });
 
-app.get('/simulate', async (_req, res) => {
-   const result = await Promise.all([
-      executeSimulate({
-         beatmapId: 129891,
-         mods: ['HD', 'HR'],
-         goods: 5,
-      }),
-   ]);
-
-   res.json(result);
-});
+app.use(simulateRoute);
 
 app.listen(3000);

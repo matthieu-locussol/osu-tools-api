@@ -13,12 +13,7 @@ export const serializeCombo = (combo: number): string => {
 };
 
 export const serializeMods = (mods: Mods): string => {
-   const serializedMods: string[] = [];
-
-   mods.forEach((mod) => {
-      serializedMods.push(`-m:${mod}`);
-   });
-
+   const serializedMods = mods.map((mod) => `-m:${mod}`);
    return serializedMods.join(' ');
 };
 

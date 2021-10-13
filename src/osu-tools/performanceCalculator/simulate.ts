@@ -48,59 +48,51 @@ export type SimulateResult = {
 };
 
 export const simulatePayloadToArgs = (payload: SimulatePayload): string => {
-   const args: string[] = [];
-
-   Object.keys(payload).forEach((keyStr) => {
-      const key = keyStr as keyof SimulatePayload;
-
-      if (payload[key] !== undefined) {
+   const args = Object.keys(payload)
+      .filter((keyStr) => {
+         const key = keyStr as keyof SimulatePayload;
+         return payload[key] !== undefined;
+      })
+      .map((key) => {
          switch (key) {
             case 'beatmapId': {
                const beatmapId = payload[key];
-               args.push(serializeBeatmapId(beatmapId));
-               break;
+               return serializeBeatmapId(beatmapId);
             }
             case 'accuracy': {
                const accuracy = payload[key];
                _assert(accuracy);
-               args.push(serializeAccuracy(accuracy));
-               break;
+               return serializeAccuracy(accuracy);
             }
             case 'combo': {
                const combo = payload[key];
                _assert(combo);
-               args.push(serializeCombo(combo));
-               break;
+               return serializeCombo(combo);
             }
             case 'mods': {
                const mods = payload[key];
                _assert(mods);
-               args.push(serializeMods(mods));
-               break;
+               return serializeMods(mods);
             }
             case 'goods': {
                const goods = payload[key];
                _assert(goods);
-               args.push(serializeGoods(goods));
-               break;
+               return serializeGoods(goods);
             }
             case 'mehs': {
                const mehs = payload[key];
                _assert(mehs);
-               args.push(serializeMehs(mehs));
-               break;
+               return serializeMehs(mehs);
             }
             case 'misses': {
                const misses = payload[key];
                _assert(misses);
-               args.push(serializeMisses(misses));
-               break;
+               return serializeMisses(misses);
             }
             default:
                throw new Error(`Unexpected key: ${key}`);
          }
-      }
-   });
+      });
 
    return args.join(' ');
 };
