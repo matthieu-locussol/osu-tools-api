@@ -8,7 +8,7 @@ import {
    serializeMisses,
 } from './serialize';
 import { _assert } from '../_assert';
-import type { SimulatePayload } from '../../osu-tools/performanceCalculator/types';
+import type { SimulatePayload } from '../../base/types';
 
 export const simulatePayloadToArgs = (payload: SimulatePayload): string => {
    const args = Object.keys(payload)

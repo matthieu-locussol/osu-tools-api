@@ -7,7 +7,7 @@ import {
    serializeMisses,
    serializeMods,
 } from './serialize';
-import type { Mods } from '../../osu-tools/performanceCalculator/types';
+import type { Mods } from '../../base/types';
 
 describe(__filename, () => {
    test('serializeBeatmapId', () => {

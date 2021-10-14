@@ -1,6 +1,6 @@
 import { executeSimulate } from '../osu-tools/performanceCalculator/simulate';
 import express from 'express';
-import type { SimulatePayload } from '../osu-tools/performanceCalculator/types';
+import type { SimulatePayload } from '../base/types';
 
 export const simulateRouter = express.Router();
 
@@ -8,7 +8,7 @@ simulateRouter.post('/simulate/one', async (req, res) => {
    try {
       const payload: SimulatePayload = req.body;
       const result = await executeSimulate(payload);
-
+      
       res.json(result);
    } catch (error) {
       res.json({

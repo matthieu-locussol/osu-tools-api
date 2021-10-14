@@ -1,11 +1,11 @@
 import {
    PERFORMANCE_CALCULATOR_CONFIGURATION,
    PERFORMANCE_CALCULATOR_PATH,
-} from './constants';
+} from '../../base/constants';
 import { execute } from '../../utils/execute';
 import { buildCommand } from '../buildCommand';
 import { simulatePayloadToArgs } from '../../utils/performanceCalculator/serializePayload';
-import type { SimulatePayload, SimulateResult } from './types';
+import type { SimulatePayload, SimulateResult } from '../../base/types';
 
 export const buildSimulateCommand = (args: string): string => {
    return buildCommand(

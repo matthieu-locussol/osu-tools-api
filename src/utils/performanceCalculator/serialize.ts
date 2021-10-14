@@ -1,4 +1,4 @@
-import type { Mods } from '../../osu-tools/performanceCalculator/types';
+import type { Mods } from '../../base/types';
 
 export const serializeBeatmapId = (beatmapId: number): string => {
    return `osu ${beatmapId}`;

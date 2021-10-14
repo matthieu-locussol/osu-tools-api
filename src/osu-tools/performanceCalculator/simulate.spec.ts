@@ -1,5 +1,5 @@
 import { executeSimulate } from './simulate';
-import type { SimulatePayload } from './types';
+import type { SimulatePayload } from '../../base/types';
 
 describe(__filename, () => {
    test('executeSimulate', async () => {

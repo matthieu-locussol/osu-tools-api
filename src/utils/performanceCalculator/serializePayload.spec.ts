@@ -1,5 +1,5 @@
 import { simulatePayloadToArgs } from './serializePayload';
-import type { SimulatePayload } from '../../osu-tools/performanceCalculator/types';
+import type { SimulatePayload } from '../../base/types';
 
 describe(__filename, () => {
    test('simulatePayloadToArgs', () => {
