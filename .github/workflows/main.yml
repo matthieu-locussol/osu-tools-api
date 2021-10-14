@@ -49,6 +49,8 @@ jobs:
       needs: [prettier, typescript, eslint]
       steps:
          - uses: actions/checkout@v2
+           with:
+              submodules: 'recursive'
          - uses: actions/setup-node@v2
            with:
               node-version: '16.11.0'
