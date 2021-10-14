@@ -1,7 +1,7 @@
 import type { Mods } from '../../base/types';
 
 export const serializeBeatmapId = (beatmapId: number): string => {
-   return `osu ${beatmapId}`;
+   return String(beatmapId);
 };
 
 export const serializeAccuracy = (accuracy: number): string => {
@@ -27,4 +27,8 @@ export const serializeMehs = (mehs: number): string => {
 
 export const serializeMisses = (misses: number): string => {
    return `-X:${misses}`;
+};
+
+export const serializeScore = (score: number): string => {
+   return `-s:${score}`;
 };

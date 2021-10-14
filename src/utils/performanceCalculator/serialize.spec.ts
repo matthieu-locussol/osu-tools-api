@@ -6,12 +6,13 @@ import {
    serializeMehs,
    serializeMisses,
    serializeMods,
+   serializeScore,
 } from './serialize';
 import type { Mods } from '../../base/types';
 
 describe(__filename, () => {
    test('serializeBeatmapId', () => {
-      expect(serializeBeatmapId(129891)).toEqual('osu 129891');
+      expect(serializeBeatmapId(129891)).toEqual('129891');
    });
 
    test('serializeAccuracy', () => {
@@ -44,5 +45,9 @@ describe(__filename, () => {
 
    test('serializeMisses', () => {
       expect(serializeMisses(3)).toEqual('-X:3');
+   });
+
+   test('serializeScore', () => {
+      expect(serializeScore(991045)).toEqual('-s:991045');
    });
 });

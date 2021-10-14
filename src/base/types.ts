@@ -25,7 +25,7 @@ export type Mod =
 
 export type Mods = Mod[];
 
-export type SimulatePayload = {
+export type SimulateOsuPayload = {
    beatmapId: number;
    accuracy?: number;
    combo?: number;
@@ -35,7 +35,7 @@ export type SimulatePayload = {
    misses?: number;
 };
 
-export type SimulateResult = {
+export type SimulateOsuResult = {
    Beatmap: string;
    Statistics: {
       Accuracy: number;
@@ -52,6 +52,30 @@ export type SimulateResult = {
    OD: number;
    AR: number;
    'Max Combo': number;
+   Mods: string;
+   pp: number;
+};
+
+export type SimulateManiaPayload = {
+   beatmapId: number;
+   score?: number;
+   mods?: Mods;
+};
+
+export type SimulateManiaResult = {
+   Beatmap: string;
+   Statistics: {
+      Accuracy: number;
+      Combo: number;
+      Perfect: number;
+      Great: number;
+      Ok: number;
+      Good: number;
+      Meh: number;
+      Miss: number;
+   };
+   Strain: number;
+   Accuracy: number;
    Mods: string;
    pp: number;
 };

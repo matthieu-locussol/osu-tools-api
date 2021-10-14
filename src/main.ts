@@ -1,4 +1,4 @@
-import { simulateRouter } from './controllers/simulateRouter';
+import { simulateRouter } from './controllers/simulate';
 import express from 'express';
 
 const app = express();

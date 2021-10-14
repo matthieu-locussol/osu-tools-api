@@ -6,14 +6,20 @@ import {
    serializeGoods,
    serializeMehs,
    serializeMisses,
+   serializeScore,
 } from './serialize';
 import { _assert } from '../_assert';
-import type { SimulatePayload } from '../../base/types';
+import type {
+   SimulateManiaPayload,
+   SimulateOsuPayload,
+} from '../../base/types';
 
-export const simulatePayloadToArgs = (payload: SimulatePayload): string => {
+export const simulateOsuPayloadToArgs = (
+   payload: SimulateOsuPayload,
+): string => {
    const args = Object.keys(payload)
       .filter((keyStr) => {
-         const key = keyStr as keyof SimulatePayload;
+         const key = keyStr as keyof SimulateOsuPayload;
          return payload[key] !== undefined;
       })
       .map((key) => {
@@ -55,7 +61,41 @@ export const simulatePayloadToArgs = (payload: SimulatePayload): string => {
             default:
                throw new Error(`Unexpected key: ${key}`);
          }
-      });
+      })
+      .join(' ');
 
-   return args.join(' ');
+   return `osu ${args}`;
+};
+
+export const simulateManiaPayloadToArgs = (
+   payload: SimulateManiaPayload,
+): string => {
+   const args = Object.keys(payload)
+      .filter((keyStr) => {
+         const key = keyStr as keyof SimulateManiaPayload;
+         return payload[key] !== undefined;
+      })
+      .map((key) => {
+         switch (key) {
+            case 'beatmapId': {
+               const beatmapId = payload[key];
+               return serializeBeatmapId(beatmapId);
+            }
+            case 'score': {
+               const score = payload[key];
+               _assert(score);
+               return serializeScore(score);
+            }
+            case 'mods': {
+               const mods = payload[key];
+               _assert(mods);
+               return serializeMods(mods);
+            }
+            default:
+               throw new Error(`Unexpected key: ${key}`);
+         }
+      })
+      .join(' ');
+
+   return `mania ${args}`;
 };
