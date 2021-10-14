@@ -6,3 +6,6 @@ export const PERFORMANCE_CALCULATOR_PATH = resolve(
 );
 
 export const PERFORMANCE_CALCULATOR_CONFIGURATION = 'Release';
+
+export const ENDPOINT_ERROR =
+   'Your request could not be processed. Please make sure the payload types and/or content matches what is expected.';
