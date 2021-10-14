@@ -24,3 +24,34 @@ export type Mod =
    | 'WU';
 
 export type Mods = Mod[];
+
+export type SimulatePayload = {
+   beatmapId: number;
+   accuracy?: number;
+   combo?: number;
+   mods?: Mods;
+   goods?: number;
+   mehs?: number;
+   misses?: number;
+};
+
+export type SimulateResult = {
+   Beatmap: string;
+   Statistics: {
+      Accuracy: number;
+      Combo: number;
+      Great: number;
+      Ok: number;
+      Meh: number;
+      Miss: number;
+   };
+   Aim: number;
+   Speed: number;
+   Accuracy: number;
+   Flashlight: number;
+   OD: number;
+   AR: number;
+   'Max Combo': number;
+   Mods: string;
+   pp: number;
+};

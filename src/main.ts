@@ -1,5 +1,5 @@
+import { simulateRouter } from './controllers/simulateRouter';
 import express from 'express';
-import { simulateRoute } from './controllers/simulate';
 
 const app = express();
 
@@ -12,6 +12,6 @@ app.get('/', (_req, res) => {
    });
 });
 
-app.use(simulateRoute);
+app.use(simulateRouter);
 
 app.listen(3000);
