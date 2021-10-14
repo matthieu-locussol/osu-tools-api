@@ -54,6 +54,10 @@ jobs:
               node-version: '16.11.0'
               cache: yarn
          - run: yarn install
+         - run:
+              dotnet build
+              submodules/osu-tools/PerformanceCalculator/PerformanceCalculator.csproj
+              --configuration Release
          - run: yarn tests:ci
 
    deploy:
