@@ -56,6 +56,32 @@ export type SimulateOsuResult = {
    pp: number;
 };
 
+export type SimulateTaikoPayload = {
+   beatmapId: number;
+   accuracy?: number;
+   combo?: number;
+   mods?: Mods;
+   goods?: number;
+   misses?: number;
+};
+
+export type SimulateTaikoResult = {
+   Beatmap: string;
+   Statistics: {
+      Accuracy: number;
+      Combo: number;
+      Great: number;
+      Ok: number;
+      Meh: number;
+      Miss: number;
+   };
+   Strain: number;
+   Accuracy: number;
+   Flashlight: number;
+   Mods: string;
+   pp: number;
+};
+
 export type SimulateManiaPayload = {
    beatmapId: number;
    score?: number;

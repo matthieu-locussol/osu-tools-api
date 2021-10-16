@@ -1,10 +1,12 @@
 import {
    simulateManiaPayloadToArgs,
    simulateOsuPayloadToArgs,
+   simulateTaikoPayloadToArgs,
 } from './serializePayload';
 import type {
    SimulateManiaPayload,
    SimulateOsuPayload,
+   SimulateTaikoPayload,
 } from '../../base/types';
 
 describe(__filename, () => {
@@ -39,6 +41,39 @@ describe(__filename, () => {
 
       samples.forEach(([input, output]) => {
          expect(simulateOsuPayloadToArgs(input)).toEqual(output);
+      });
+   });
+
+   test('simulateTaikoPayloadToArgs', () => {
+      const samples: [SimulateTaikoPayload, string][] = [
+         [
+            {
+               beatmapId: 1569934,
+            },
+            'taiko 1569934',
+         ],
+         [
+            {
+               beatmapId: 1569934,
+               accuracy: 98.66,
+            },
+            'taiko 1569934 -a:98.66',
+         ],
+         [
+            {
+               beatmapId: 1569934,
+               accuracy: 99,
+               combo: 2099,
+               goods: 5,
+               misses: 17,
+               mods: ['HD', 'DT'],
+            },
+            'taiko 1569934 -a:99 -c:2099 -G:5 -X:17 -m:HD -m:DT',
+         ],
+      ];
+
+      samples.forEach(([input, output]) => {
+         expect(simulateTaikoPayloadToArgs(input)).toEqual(output);
       });
    });
 
