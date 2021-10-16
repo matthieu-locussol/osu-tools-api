@@ -3,8 +3,8 @@ import {
    PERFORMANCE_CALCULATOR_PATH,
 } from '../../../base/constants';
 import { execute } from '../../../utils/execute';
-import { buildCommand } from '../../buildCommand';
 import { simulateOsuPayloadToArgs } from '../../../utils/performanceCalculator/serializePayload';
+import { buildCommand } from '../../buildCommand';
 import type {
    SimulateOsuPayload,
    SimulateOsuResult,

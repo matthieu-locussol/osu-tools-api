@@ -1,7 +1,10 @@
 import { ENDPOINT_ERROR } from '../../base/constants';
 import { executeSimulateMania } from '../../osu-tools/performanceCalculator/simulate/mania';
 import express from 'express';
-import type { SimulateManiaPayload } from '../../base/types';
+import type {
+   SimulateManiaPayload,
+   SimulateManiaResult,
+} from '../../base/types';
 
 export const simulateManiaRouter = express.Router();
 
@@ -21,9 +24,12 @@ simulateManiaRouter.post('/simulate/mania/one', async (req, res) => {
 simulateManiaRouter.post('/simulate/mania/many', async (req, res) => {
    try {
       const payloads: SimulateManiaPayload[] = req.body;
-      const results = await Promise.all(
-         payloads.map((payload) => executeSimulateMania(payload)),
-      );
+      const results: SimulateManiaResult[] = [];
+
+      for (const payload of payloads) {
+         const result = await executeSimulateMania(payload);
+         results.push(result);
+      }
 
       res.json(results);
    } catch (error) {

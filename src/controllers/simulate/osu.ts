@@ -1,7 +1,7 @@
-import { executeSimulateOsu } from '../../osu-tools/performanceCalculator/simulate/osu';
 import { ENDPOINT_ERROR } from '../../base/constants';
+import { executeSimulateOsu } from '../../osu-tools/performanceCalculator/simulate/osu';
 import express from 'express';
-import type { SimulateOsuPayload } from '../../base/types';
+import type { SimulateOsuPayload, SimulateOsuResult } from '../../base/types';
 
 export const simulateOsuRouter = express.Router();
 
@@ -21,9 +21,12 @@ simulateOsuRouter.post('/simulate/osu/one', async (req, res) => {
 simulateOsuRouter.post('/simulate/osu/many', async (req, res) => {
    try {
       const payloads: SimulateOsuPayload[] = req.body;
-      const results = await Promise.all(
-         payloads.map((payload) => executeSimulateOsu(payload)),
-      );
+      const results: SimulateOsuResult[] = [];
+
+      for (const payload of payloads) {
+         const result = await executeSimulateOsu(payload);
+         results.push(result);
+      }
 
       res.json(results);
    } catch (error) {
