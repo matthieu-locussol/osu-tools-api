@@ -82,6 +82,31 @@ export type SimulateTaikoResult = {
    pp: number;
 };
 
+export type SimulateCatchPayload = {
+   beatmapId: number;
+   accuracy?: number;
+   combo?: number;
+   mods?: Mods;
+   droplets?: number;
+   tinyDroplets?: number;
+   misses?: number;
+};
+
+export type SimulateCatchResult = {
+   Beatmap: string;
+   Statistics: {
+      Accuracy: number;
+      Combo: number;
+      Great: number;
+      LargeTickHit: number;
+      SmallTickHit: number;
+      SmallTickMiss: number;
+      Miss: number;
+   };
+   Mods: string;
+   pp: number;
+};
+
 export type SimulateManiaPayload = {
    beatmapId: number;
    score?: number;

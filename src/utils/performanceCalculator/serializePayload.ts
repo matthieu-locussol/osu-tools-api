@@ -7,9 +7,12 @@ import {
    serializeMehs,
    serializeMisses,
    serializeScore,
+   serializeDroplets,
+   serializeTinyDroplets,
 } from './serialize';
 import { _assert } from '../_assert';
 import type {
+   SimulateCatchPayload,
    SimulateManiaPayload,
    SimulateOsuPayload,
    SimulateTaikoPayload,
@@ -114,6 +117,59 @@ export const simulateTaikoPayloadToArgs = (
       .join(' ');
 
    return `taiko ${args}`;
+};
+
+export const simulateCatchPayloadToArgs = (
+   payload: SimulateCatchPayload,
+): string => {
+   const args = Object.keys(payload)
+      .filter((keyStr) => {
+         const key = keyStr as keyof SimulateCatchPayload;
+         return payload[key] !== undefined;
+      })
+      .map((key) => {
+         switch (key) {
+            case 'beatmapId': {
+               const beatmapId = payload[key];
+               return serializeBeatmapId(beatmapId);
+            }
+            case 'accuracy': {
+               const accuracy = payload[key];
+               _assert(accuracy);
+               return serializeAccuracy(accuracy);
+            }
+            case 'combo': {
+               const combo = payload[key];
+               _assert(combo);
+               return serializeCombo(combo);
+            }
+            case 'mods': {
+               const mods = payload[key];
+               _assert(mods);
+               return serializeMods(mods);
+            }
+            case 'droplets': {
+               const droplets = payload[key];
+               _assert(droplets);
+               return serializeDroplets(droplets);
+            }
+            case 'tinyDroplets': {
+               const tinyDroplets = payload[key];
+               _assert(tinyDroplets);
+               return serializeTinyDroplets(tinyDroplets);
+            }
+            case 'misses': {
+               const misses = payload[key];
+               _assert(misses);
+               return serializeMisses(misses);
+            }
+            default:
+               throw new Error(`Unexpected key: ${key}`);
+         }
+      })
+      .join(' ');
+
+   return `catch ${args}`;
 };
 
 export const simulateManiaPayloadToArgs = (

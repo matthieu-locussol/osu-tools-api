@@ -2,11 +2,13 @@ import {
    serializeAccuracy,
    serializeBeatmapId,
    serializeCombo,
+   serializeDroplets,
    serializeGoods,
    serializeMehs,
    serializeMisses,
    serializeMods,
    serializeScore,
+   serializeTinyDroplets,
 } from './serialize';
 import type { Mods } from '../../base/types';
 
@@ -49,5 +51,13 @@ describe(__filename, () => {
 
    test('serializeScore', () => {
       expect(serializeScore(991045)).toEqual('-s:991045');
+   });
+
+   test('serializeDroplets', () => {
+      expect(serializeDroplets(5)).toEqual('-D:5');
+   });
+
+   test('serializeTinyDroplets', () => {
+      expect(serializeTinyDroplets(7)).toEqual('-T:7');
    });
 });

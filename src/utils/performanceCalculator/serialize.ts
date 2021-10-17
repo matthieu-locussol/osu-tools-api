@@ -32,3 +32,11 @@ export const serializeMisses = (misses: number): string => {
 export const serializeScore = (score: number): string => {
    return `-s:${score}`;
 };
+
+export const serializeDroplets = (droplets: number): string => {
+   return `-D:${droplets}`;
+};
+
+export const serializeTinyDroplets = (tinyDroplets: number): string => {
+   return `-T:${tinyDroplets}`;
+};
