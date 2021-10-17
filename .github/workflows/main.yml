@@ -63,6 +63,8 @@ jobs:
               dotnet build
               submodules/osu-tools/PerformanceCalculator/PerformanceCalculator.csproj
               --configuration Release
+         - run: echo "OSU_OAUTH_ID=${{ secrets.OSU_OAUTH_ID }}" >> .env
+         - run: echo "OSU_OAUTH_TOKEN=${{ secrets.OSU_OAUTH_TOKEN }}" >> .env
          - run: yarn tests:ci
 
    deploy:
