@@ -11,7 +11,7 @@ export const execute = (command: string): Promise<string> => {
          // When there is a cache-miss, osu-tools downloads the map and output a line in stdout.
          // We need to remove this line to parse only the JSON output.
          else if (stdout.startsWith('Downloading')) {
-            const output = stdout.split('\n').reverse()[0];
+            const output = stdout.split('\n').slice(1).join('\n');
             resolve(output);
          }
          // When there is a profile command, osu-tools writes three messages:
