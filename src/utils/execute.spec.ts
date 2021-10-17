@@ -3,13 +3,13 @@ import { execute } from './execute';
 describe(__filename, () => {
    test('execute', async () => {
       const samples = [
-         ['echo "example"', 'example\n'],
-         ['echo "Downloading...\nexample"', 'example\n'],
+         ['echo -n "example"', 'example'],
+         ['echo -n "Downloading...\nexample"', 'example'],
       ];
 
-      samples.forEach(async ([input, output]) => {
+      for (const [input, output] of samples) {
          const result = await execute(input);
          expect(result).toEqual(output);
-      });
+      }
    });
 });

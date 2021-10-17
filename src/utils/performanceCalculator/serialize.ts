@@ -40,3 +40,11 @@ export const serializeDroplets = (droplets: number): string => {
 export const serializeTinyDroplets = (tinyDroplets: number): string => {
    return `-T:${tinyDroplets}`;
 };
+
+export const serializeUserId = (userId: number): string => {
+   return String(userId);
+};
+
+export const serializeRuleset = (ruleset: number): string => {
+   return `-r:${ruleset}`;
+};

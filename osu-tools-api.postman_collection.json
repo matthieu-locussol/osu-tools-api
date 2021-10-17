@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "9a69cdf2-b169-444f-b754-1dc1dd73263a",
+		"name": "osu-tools-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "simulate",
+			"item": [
+				{
+					"name": "osu",
+					"item": [
+						{
+							"name": "One",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"beatmapId\": 129891\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/simulate/osu/one",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"simulate",
+										"osu",
+										"one"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Many",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"beatmapId\": 129891\r\n    },\r\n    {\r\n        \"beatmapId\": 129891,\r\n        \"mods\": [\r\n            \"HD\"\r\n        ]\r\n    },\r\n    {\r\n        \"beatmapId\": 129891,\r\n        \"mods\": [\r\n            \"HD\",\r\n            \"HR\"\r\n        ]\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/simulate/osu/many",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"simulate",
+										"osu",
+										"many"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "taiko",
+					"item": [
+						{
+							"name": "One",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"beatmapId\": 1569934\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/simulate/taiko/one",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"simulate",
+										"taiko",
+										"one"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Many",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"beatmapId\": 1569934\r\n    },\r\n    {\r\n        \"beatmapId\": 1569934,\r\n        \"mods\": [\r\n            \"HD\"\r\n        ]\r\n    },\r\n    {\r\n        \"beatmapId\": 1569934,\r\n        \"mods\": [\r\n            \"HD\",\r\n            \"HR\"\r\n        ]\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/simulate/taiko/many",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"simulate",
+										"taiko",
+										"many"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "catch",
+					"item": [
+						{
+							"name": "One",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"beatmapId\": 1116202\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/simulate/catch/one",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"simulate",
+										"catch",
+										"one"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Many",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"beatmapId\": 1116202\r\n    },\r\n    {\r\n        \"beatmapId\": 1116202,\r\n        \"mods\": [\r\n            \"HD\"\r\n        ]\r\n    },\r\n    {\r\n        \"beatmapId\": 1116202,\r\n        \"mods\": [\r\n            \"HD\",\r\n            \"HR\"\r\n        ]\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/simulate/catch/many",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"simulate",
+										"catch",
+										"many"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mania",
+					"item": [
+						{
+							"name": "One",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"beatmapId\": 706049\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/simulate/mania/one",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"simulate",
+										"mania",
+										"one"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Many",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"beatmapId\": 706049\r\n    },\r\n    {\r\n        \"beatmapId\": 706049,\r\n        \"mods\": [\r\n            \"HD\"\r\n        ]\r\n    },\r\n    {\r\n        \"beatmapId\": 706049,\r\n        \"mods\": [\r\n            \"HD\",\r\n            \"HR\"\r\n        ]\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/simulate/mania/many",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"simulate",
+										"mania",
+										"many"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"beatmapId\": 706049\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/simulate/mania/one",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"simulate",
+						"mania",
+						"one"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

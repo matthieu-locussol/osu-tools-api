@@ -87,6 +87,8 @@ jobs:
               dotnet build
               submodules/osu-tools/PerformanceCalculator/PerformanceCalculator.csproj
               --configuration Release
+         - run: echo "OSU_OAUTH_ID=${{ secrets.OSU_OAUTH_ID }}" >> .env
+         - run: echo "OSU_OAUTH_TOKEN=${{ secrets.OSU_OAUTH_TOKEN }}" >> .env
          - run: echo "${{ secrets.SSHKEY }}" > key.pem
          - run: chmod 600 key.pem
          - run:

@@ -9,9 +9,12 @@ import {
    serializeScore,
    serializeDroplets,
    serializeTinyDroplets,
+   serializeUserId,
+   serializeRuleset,
 } from './serialize';
 import { _assert } from '../_assert';
 import type {
+   ProfilePayload,
    SimulateCatchPayload,
    SimulateManiaPayload,
    SimulateOsuPayload,
@@ -203,4 +206,30 @@ export const simulateManiaPayloadToArgs = (
       .join(' ');
 
    return `mania ${args}`;
+};
+
+export const profilePayloadToArgs = (payload: ProfilePayload): string => {
+   const args = Object.keys(payload)
+      .filter((keyStr) => {
+         const key = keyStr as keyof ProfilePayload;
+         return payload[key] !== undefined;
+      })
+      .map((key) => {
+         switch (key) {
+            case 'userId': {
+               const userId = payload[key];
+               return serializeUserId(userId);
+            }
+            case 'ruleset': {
+               const ruleset = payload[key];
+               _assert(ruleset);
+               return serializeRuleset(ruleset);
+            }
+            default:
+               throw new Error(`Unexpected key: ${key}`);
+         }
+      })
+      .join(' ');
+
+   return `${args} ${process.env.OSU_OAUTH_ID} ${process.env.OSU_OAUTH_TOKEN}`;
 };

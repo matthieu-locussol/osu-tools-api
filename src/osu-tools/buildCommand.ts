@@ -1,4 +1,4 @@
-export type CommandType = 'simulate';
+export type CommandType = 'simulate' | 'profile';
 
 export const buildCommand = (
    type: CommandType,

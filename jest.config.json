@@ -1,4 +1,6 @@
 {
-    "preset": "ts-jest",
-    "testEnvironment": "node"
+   "preset": "ts-jest",
+   "testEnvironment": "node",
+   "testTimeout": 90000,
+   "testPathIgnorePatterns": ["node_modules", "build"]
 }

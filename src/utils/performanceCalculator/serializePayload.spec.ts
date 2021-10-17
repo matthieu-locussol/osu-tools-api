@@ -1,10 +1,12 @@
 import {
+   profilePayloadToArgs,
    simulateCatchPayloadToArgs,
    simulateManiaPayloadToArgs,
    simulateOsuPayloadToArgs,
    simulateTaikoPayloadToArgs,
 } from './serializePayload';
 import type {
+   ProfilePayload,
    SimulateCatchPayload,
    SimulateManiaPayload,
    SimulateOsuPayload,
@@ -41,9 +43,9 @@ describe(__filename, () => {
          ],
       ];
 
-      samples.forEach(([input, output]) => {
+      for (const [input, output] of samples) {
          expect(simulateOsuPayloadToArgs(input)).toEqual(output);
-      });
+      }
    });
 
    test('simulateTaikoPayloadToArgs', () => {
@@ -74,9 +76,9 @@ describe(__filename, () => {
          ],
       ];
 
-      samples.forEach(([input, output]) => {
+      for (const [input, output] of samples) {
          expect(simulateTaikoPayloadToArgs(input)).toEqual(output);
-      });
+      }
    });
 
    test('simulateCatchPayloadToArgs', () => {
@@ -108,9 +110,9 @@ describe(__filename, () => {
          ],
       ];
 
-      samples.forEach(([input, output]) => {
+      for (const [input, output] of samples) {
          expect(simulateCatchPayloadToArgs(input)).toEqual(output);
-      });
+      }
    });
 
    test('simulateManiaPayloadToArgs', () => {
@@ -138,8 +140,30 @@ describe(__filename, () => {
          ],
       ];
 
-      samples.forEach(([input, output]) => {
+      for (const [input, output] of samples) {
          expect(simulateManiaPayloadToArgs(input)).toEqual(output);
-      });
+      }
+   });
+
+   test('profilePayloadToArgs', () => {
+      const samples: [ProfilePayload, string][] = [
+         [
+            {
+               userId: 3053420,
+            },
+            `3053420 ${process.env.OSU_OAUTH_ID} ${process.env.OSU_OAUTH_TOKEN}`,
+         ],
+         [
+            {
+               userId: 3053420,
+               ruleset: 2,
+            },
+            `3053420 -r:2 ${process.env.OSU_OAUTH_ID} ${process.env.OSU_OAUTH_TOKEN}`,
+         ],
+      ];
+
+      for (const [input, output] of samples) {
+         expect(profilePayloadToArgs(input)).toEqual(output);
+      }
    });
 });

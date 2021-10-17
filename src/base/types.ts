@@ -130,3 +130,26 @@ export type SimulateManiaResult = {
    Mods: string;
    pp: number;
 };
+
+export type ProfilePayload = {
+   userId: number;
+   ruleset?: number;
+};
+
+export type ProfileResult = {
+   Username: string;
+   LivePp: number;
+   LocalPp: number;
+   PlaycountPp: number;
+   Scores: {
+      BeatmapId: number;
+      BeatmapName: string;
+      Combo: number;
+      Accuracy: number;
+      MissCount: number;
+      Mods: Mods;
+      LivePp: number;
+      LocalPp: number;
+      PositionChange: number;
+   }[];
+};

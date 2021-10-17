@@ -7,8 +7,10 @@ import {
    serializeMehs,
    serializeMisses,
    serializeMods,
+   serializeRuleset,
    serializeScore,
    serializeTinyDroplets,
+   serializeUserId,
 } from './serialize';
 import type { Mods } from '../../base/types';
 
@@ -32,9 +34,9 @@ describe(__filename, () => {
          [['HD', 'DT'], '-m:HD -m:DT'],
       ];
 
-      samples.forEach(([input, output]) => {
+      for (const [input, output] of samples) {
          expect(serializeMods(input)).toEqual(output);
-      });
+      }
    });
 
    test('serializeGoods', () => {
@@ -59,5 +61,13 @@ describe(__filename, () => {
 
    test('serializeTinyDroplets', () => {
       expect(serializeTinyDroplets(7)).toEqual('-T:7');
+   });
+
+   test('serializeUserId', () => {
+      expect(serializeUserId(3053420)).toEqual('3053420');
+   });
+
+   test('serializeRuleset', () => {
+      expect(serializeRuleset(0)).toEqual('-r:0');
    });
 });

@@ -1,3 +1,5 @@
+import 'dotenv/config';
+import { profileRouter } from './controllers/profile';
 import { simulateRouter } from './controllers/simulate';
 import express from 'express';
 
@@ -13,5 +15,6 @@ app.get('/', (_req, res) => {
 });
 
 app.use(simulateRouter);
+app.use(profileRouter);
 
 app.listen(3000);
