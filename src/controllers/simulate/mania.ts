@@ -1,9 +1,9 @@
-import { executeSimulateMania } from '../../osu-tools/performanceCalculator/simulate/mania';
 import express from 'express';
 import type {
    SimulateManiaPayload,
    SimulateManiaResult,
 } from '../../base/types';
+import { executeSimulateMania } from '../../osu-tools/performanceCalculator/simulate/mania';
 
 export const simulateManiaRouter = express.Router();
 

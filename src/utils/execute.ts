@@ -1,5 +1,5 @@
-import { getStderrError } from '../base/errors';
 import { exec } from 'child_process';
+import { getStderrError } from '../base/errors';
 
 export const execute = (command: string): Promise<string> => {
    const promise = new Promise<string>((resolve, reject) => {
@@ -12,6 +12,7 @@ export const execute = (command: string): Promise<string> => {
          // We need to remove this line to parse only the JSON output.
          else if (stdout.startsWith('Downloading')) {
             const output = stdout.split('\n').slice(1).join('\n');
+
             resolve(output);
          }
          // When there is a profile command, osu-tools writes three messages:

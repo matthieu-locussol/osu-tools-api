@@ -1,6 +1,6 @@
+import express from 'express';
 import { ProfilePayload } from '../base/types';
 import { executeProfile } from '../osu-tools/performanceCalculator/profile/profile';
-import express from 'express';
 
 export const profileRouter = express.Router();
 

@@ -1,9 +1,9 @@
-import { executeSimulateCatch } from '../../osu-tools/performanceCalculator/simulate/catch';
 import express from 'express';
 import type {
    SimulateCatchPayload,
    SimulateCatchResult,
 } from '../../base/types';
+import { executeSimulateCatch } from '../../osu-tools/performanceCalculator/simulate/catch';
 
 export const simulateCatchRouter = express.Router();
 

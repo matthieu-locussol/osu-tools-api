@@ -1,6 +1,6 @@
-import { executeSimulateOsu } from '../../osu-tools/performanceCalculator/simulate/osu';
 import express from 'express';
 import type { SimulateOsuPayload, SimulateOsuResult } from '../../base/types';
+import { executeSimulateOsu } from '../../osu-tools/performanceCalculator/simulate/osu';
 
 export const simulateOsuRouter = express.Router();
 

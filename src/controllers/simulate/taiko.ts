@@ -1,9 +1,9 @@
-import { executeSimulateTaiko } from '../../osu-tools/performanceCalculator/simulate/taiko';
 import express from 'express';
 import type {
    SimulateTaikoPayload,
    SimulateTaikoResult,
 } from '../../base/types';
+import { executeSimulateTaiko } from '../../osu-tools/performanceCalculator/simulate/taiko';
 
 export const simulateTaikoRouter = express.Router();
 

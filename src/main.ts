@@ -1,7 +1,7 @@
 import 'dotenv/config';
+import express from 'express';
 import { profileRouter } from './controllers/profile';
 import { simulateRouter } from './controllers/simulate';
-import express from 'express';
 
 const app = express();
 
