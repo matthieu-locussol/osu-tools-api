@@ -1,7 +1,11 @@
 import { exec } from 'child_process';
 import { getStderrError } from '../base/errors';
+import { _assertTrue } from './_assert';
 
 export const execute = (command: string): Promise<string> => {
+   _assertTrue(command.startsWith('dotnet run --project '));
+   _assertTrue(command.endsWith('--json'));
+
    const promise = new Promise<string>((resolve, reject) => {
       exec(command, (error, stdout, stderr) => {
          if (error !== null) {
