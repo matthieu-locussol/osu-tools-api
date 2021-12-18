@@ -1,8 +1,54 @@
 {
    "folders": [
       {
+         "name": "Root",
          "path": "."
       }
    ],
-   "settings": {}
+   "settings": {
+      "editor.guides.bracketPairs": true,
+      "editor.bracketPairColorization.enabled": true,
+      "editor.codeActionsOnSave": {
+         "source.fixAll": true,
+         "source.organizeImports": true
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true,
+      "restoreTerminals.keepExistingTerminalsOpen": false,
+      "restoreTerminals.terminals": [
+         {
+            "splitTerminals": [
+               {
+                  "name": "Server",
+                  "commands": ["yarn dev"]
+               }
+            ]
+         },
+         {
+            "splitTerminals": [
+               {
+                  "name": "Shell",
+                  "commands": [""]
+               }
+            ]
+         }
+      ],
+      "jest.autoRun": {
+         "watch": false,
+         "onSave": "test-src-file",
+         "onStartup": ["all-tests"]
+      },
+      "jest.jestCommandLine": "yarn tests",
+      "jest.testExplorer": {
+         "enabled": true,
+         "showClassicStatus": true
+      }
+   },
+   "extensions": {
+      "recommendations": [
+         "dbaeumer.vscode-eslint",
+         "esbenp.prettier-vscode",
+         "ethansk.restore-terminals"
+      ]
+   }
 }
