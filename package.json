@@ -1,6 +1,6 @@
 {
    "name": "osu-tools-api",
-   "version": "1.1.1",
+   "version": "1.1.2",
    "description": "An API using osu-tools to get stuff done.",
    "repository": "git@github.com:matthieu-locussol/osu-tools-api.git",
    "author": "Matthieu Locussol <dev.matthieu.locussol@gmail.com>",
