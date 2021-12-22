@@ -1,13 +1,15 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[standard-version](https://github.com/conventional-changelog/standard-version)
+for commit guidelines.
 
 ### [1.1.1](https://github.com/matthieu-locussol/osu-tools-api/compare/v1.1.0...v1.1.1) (2021-12-22)
 
-
 ### Bug Fixes
 
-* updated workflow to overwrite remote files on deploy ([0098541](https://github.com/matthieu-locussol/osu-tools-api/commit/0098541b707e76581b54e072a15b04c1df06f5af))
+-  updated workflow to overwrite remote files on deploy
+   ([0098541](https://github.com/matthieu-locussol/osu-tools-api/commit/0098541b707e76581b54e072a15b04c1df06f5af))
 
 ## [1.1.0](https://github.com/matthieu-locussol/osu-tools-api/compare/v1.0.0...v1.1.0) (2021-12-22)
 
