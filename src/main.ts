@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
+import { version } from '../package.json';
 import { profileRouter } from './controllers/profile';
 import { simulateRouter } from './controllers/simulate';
 
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (_req, res) => {
    res.json({
       status: 'Server healthy',
+      version,
    });
 });
 
