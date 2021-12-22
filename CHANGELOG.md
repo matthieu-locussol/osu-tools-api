@@ -1,8 +1,20 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See
-[standard-version](https://github.com/conventional-changelog/standard-version)
-for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.1.0](https://github.com/matthieu-locussol/osu-tools-api/compare/v1.0.0...v1.1.0) (2021-12-22)
+
+
+### Features
+
+* exposes version of the API under the root controller ([f1b48e5](https://github.com/matthieu-locussol/osu-tools-api/commit/f1b48e5ad99c66a569de6b52e5517f4b3e8118c0))
+
+
+### Bug Fixes
+
+* added some security checks in the execute function ([4ad12f7](https://github.com/matthieu-locussol/osu-tools-api/commit/4ad12f77694022fc5220d12f29866bb76edfbd8b))
+* indent ([85ab15c](https://github.com/matthieu-locussol/osu-tools-api/commit/85ab15cf8dc37d2bf7ea7f758184f788f0ead9c7))
+* revert last commit ([1acc19f](https://github.com/matthieu-locussol/osu-tools-api/commit/1acc19fbb9245093d0541dd20ff70fb3b3228dfe))
 
 ## 1.0.0 (2021-12-18)
 
