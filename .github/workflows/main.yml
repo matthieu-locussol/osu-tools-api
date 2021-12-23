@@ -94,6 +94,7 @@ jobs:
               --configuration Release
          - run: echo "OSU_OAUTH_ID=${{ secrets.OSU_OAUTH_ID }}" >> .env
          - run: echo "OSU_OAUTH_TOKEN=${{ secrets.OSU_OAUTH_TOKEN }}" >> .env
+         - run: echo "DOTNET_PATH=${{ secrets.DOTNET_PATH }}" >> .env
          - run: echo "${{ secrets.SSHKEY }}" > key.pem
          - run: chmod 600 key.pem
          - run:
