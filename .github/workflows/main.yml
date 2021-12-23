@@ -67,6 +67,7 @@ jobs:
               --configuration Release
          - run: echo "OSU_OAUTH_ID=${{ secrets.OSU_OAUTH_ID }}" >> .env
          - run: echo "OSU_OAUTH_TOKEN=${{ secrets.OSU_OAUTH_TOKEN }}" >> .env
+         - run: echo "DOTNET_PATH=${{ secrets.DOTNET_PATH }}" >> .env
          - run: yarn tests:ci
 
    deploy:
