@@ -7,7 +7,7 @@ export const buildCommand = (
    args: string,
 ): string => {
    const command = [
-      `dotnet run`,
+      `/usr/share/dotnet/dotnet run`,
       `--project ${path}`,
       `--configuration ${configuration}`,
       `-- ${type} ${args}`,
