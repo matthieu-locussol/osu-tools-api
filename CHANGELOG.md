@@ -1,13 +1,15 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[standard-version](https://github.com/conventional-changelog/standard-version)
+for commit guidelines.
 
 ### [1.1.5](https://github.com/matthieu-locussol/osu-tools-api/compare/v1.1.4...v1.1.5) (2021-12-23)
 
-
 ### Bug Fixes
 
-* updated dotnet path default value ([cfb9da9](https://github.com/matthieu-locussol/osu-tools-api/commit/cfb9da98dc59ef5837a224f0d9224819e6d36727))
+-  updated dotnet path default value
+   ([cfb9da9](https://github.com/matthieu-locussol/osu-tools-api/commit/cfb9da98dc59ef5837a224f0d9224819e6d36727))
 
 ### [1.1.4](https://github.com/matthieu-locussol/osu-tools-api/compare/v1.1.3...v1.1.4) (2021-12-23)
 
